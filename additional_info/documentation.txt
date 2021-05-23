@@ -41,16 +41,16 @@ MULTIPLE REPORTS BUTTON:
 - it will ask you which file you want to choose
 - structure of the data has to look like this:
 
-  report_index	Fx[N]	Fy[N]	D[mm]	t[mm]	a[mm]	W[mm]
-	-	  -	  -	  -	  -	  -	   -
-	-	  -	  -	  -	  - 	  -	   -
-	-	  - 	  - 	  - 	  - 	  - 	   -
-	- 	  - 	  - 	  - 	  -	  - 	   -
-	-	  -	  -	  -	  -	  -	   -
-	-	  -	  -	  -	  -	  -	   -
-	-	  -	  -	  -	  -	  -	   -
-	-	  -	  -	  -	  -	  -	   -
-	-	  -	  -	  -	  -	  -	   -
+  report_name	Fx[N]	Fy[N]	D[mm]	t[mm]	a[mm]	W[mm]
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
+	      -	        -	    -	    -	    -	    -	    -
 
 - the example of suitable data could be found inside the directory 
   test_data, it was copied directly from excel 
