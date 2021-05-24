@@ -4,7 +4,7 @@
 [x] rozloženie GUI na windows zariadení
 [ ] odskúšať to aj na iných windows zariadeniach
 [x] report je nejaký odseknutý
-[ ] automaticke nastavovanie nazvu grafu v multiple reports
+[x] automaticke nastavovanie nazvu grafu v multiple reports
 
 OTÁZKY:
 - thickness na nákrese nie je responzívne, nechali sme to tak?
