@@ -136,6 +136,7 @@ output_value['BEA'] = tkinter.Label(
     outputs, text='BEA', bg=bg, font=font[1], fg='black')
 output_value['BEA'].grid(row=12, column=0, columnspan=2)
 
+
 # ---SPECIFIC MATERIAL------------------------------------------------------------------
 ipady = 2
 tkinter.Label(other_material, text='Ftu[MPa]', bg=bg, font=font[2]).grid(
