@@ -28,8 +28,8 @@ g.grid(row=1, column=2, rowspan=2)
 g.update()
 
 # entry box to type name of the case which is tested
-tkinter.Entry(width=25, justify='center', font=font[0], border=1, relief=bd_style).grid(
-    row=0, column=2, stick='E'+'W'+'N', padx=25, pady=(10, 0), ipady=4)
+report_title = tkinter.Entry(width=25, justify='center', font=font[0], border=1, relief=bd_style)
+report_title.grid(row=0, column=2, stick='E'+'W'+'N', padx=25, pady=(10, 0), ipady=4)
 
 # error label for calculations
 error_lab_calc = tkinter.Label(text='', bg='grey')
@@ -185,7 +185,7 @@ specific_TFty.grid(row=3, column=2, ipady=ipady)
 
 specific_Fbry = tkinter.Entry(
     other_material, justify='center', font=font[2], width=width, relief=bd_style)
-specific_Fbry.grid(row=2, column=3, rowspan=2, ipady=4*ipady)
+specific_Fbry.grid(row=2, column=3, rowspan=2, ipady=6*ipady)
 
 # ---BUTTONS----------------------------------------------------------------------
 ipady = 15
@@ -212,11 +212,11 @@ b4 = tkinter.Button(buttons, text='Redraw', command=lambda:
 b4.grid(row=3, column=1, sticky='e'+'w', ipadx=ipadx2, ipady=ipady)
 
 b5 = tkinter.Button(buttons, text='Multiple reports',
-                    command=lambda: report.multiple_reports(dname, entry_id, d_entry, g, font, bg, err_lab_scheme, root, calc_args), font=font[1], bg=bg)
+                    command=lambda: report.multiple_reports(dname, entry_id, d_entry, g, font, bg, err_lab_scheme, root, calc_args, report_title), font=font[1], bg=bg)
 b5.grid(row=2, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
 
 b6 = tkinter.Button(buttons, text='Generate report',
-                    command=lambda: report.generate_report(True, root, dname, None, None), font=font[1], bg=bg)
+                    command=lambda: report.generate_report(True, root, None, None), font=font[1], bg=bg)
 b6.grid(row=2, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
 
 b7 = tkinter.Button(buttons, text='Calculate',
