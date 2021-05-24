@@ -1,10 +1,11 @@
-[ ] thickness na nákrese nefunguje
-    --> tuším sme to nechali tak, že je to nepodstatné
 [ ] prerobiť dokumentáciu
     --> reports folred nie je nevyhnutný na fungovanie, môže byť zmenený
     --> funguje exe aj samostatne ako jeden súbor
-[ ] rozloženie GUI na windows zariadení
+[x] rozloženie GUI na windows zariadení
 [ ] odskúšať to aj na iných windows zariadeniach
-[ ] report je nejaký odseknutý
+[x] report je nejaký odseknutý
 [ ] automaticke nastavovanie nazvu grafu v multiple reports
-[ ] sprav labelframe špecificky pre grain direction a load type
+
+OTÁZKY:
+- thickness na nákrese nie je responzívne, nechali sme to tak?
+- je entry pre specific material dostatočne široké?

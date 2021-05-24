@@ -8,10 +8,10 @@ import calc
 
 def generate_report(single_report, root, dname, report_name, dir_path):
     global report_num
-    xpos1 = root.winfo_x()
-    xpos2 = root.winfo_width()
+    xpos1 = root.winfo_x()+13
+    xpos2 = root.winfo_width()-10
     ypos1 = root.winfo_y()
-    ypos2 = root.winfo_height()
+    ypos2 = root.winfo_height()+38
 
     im = pyautogui.screenshot(region=(xpos1, ypos1, xpos2, ypos2))
     if single_report:

@@ -21,17 +21,19 @@ def get_material_data(material, reverse, dname):
     return out
 
 
-def show_output(value, id):
-    id.config(text=value)
-    ipadx = 35
-    id.grid(ipadx=ipadx)
-    if value < 1:
-        id.config(fg='red')
-    else:
-        id.config(fg='green')
+def show_output(value, id, label_map):
+    label_map[id].config(text=value)
+    if id != 'BEA': 
+        label_map[id].grid(padx=(45, 1), stick='E')
+
+    # highlight the results
+    if value < 1: label_map[id].config(fg='red')
+    else: label_map[id].config(fg='green')
 
 
 def back_to_default(lab2_row, output_lab, output_value, font):
+    # if there is an occurence of error the output labels
+    # are returned to the default value
     for i in range(len(lab2_row)):
         output_value[output_lab[i]].config(
             text=output_lab[i], fg='black', font='15')
@@ -51,12 +53,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     curve_trans, specific_Fbry, specific_LFtu, error_lab_calc, output_lab, lab2_row,
     specific_LFty, specific_TFtu, specific_TFty, reverse, f, font):
     
-    # global d_entry, material_info, curve_axial, dname, output_value
-    # global curve_trans, specific_Fbry, specific_LFtu, error_lab_calc
-    # global specific_LFty, specific_TFtu, specific_TFty, reversed, f
-
     error_lab_calc.config(text='')
-    # basic inputs
     Fx = float(d_entry['fx_ent'].get())
     Fy = float(d_entry['fy_ent'].get())
     D = float(d_entry['d_ent'].get())
@@ -118,7 +115,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     else:
         Pbru = kbr*D*t*material['LFtu']
         FS_Pbru = round(Pbru / Fx, 2)
-        show_output(FS_Pbru, output_value['Pbru'])
+        show_output(FS_Pbru, 'Pbru', output_value)
 
     # tension failure
     file_name = curve_axial.get()
@@ -140,7 +137,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
         At = (W - D) * t
         Ptu = kt*At*material['LFtu']
         FS_Ptu = round(Ptu / Fx, 2)
-        show_output(FS_Ptu, output_value['Ptu'])
+        show_output(FS_Ptu, 'Ptu', output_value)
         print('At = ', At)
 
     # yield tension failure
@@ -167,7 +164,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     else:
         Pya = C * (material['LFty']/material['LFtu']) * Pu
         FS_Pya = round(Pya / Fx, 2)
-        show_output(FS_Pya, output_value['Py-axial'])
+        show_output(FS_Pya, 'Py-axial', output_value)
 
     # TRANSVERSE LOAD -------------------------------------------------------------------------------------------------
     # ultimate load
@@ -211,7 +208,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
 
     Ptru = ktru * Abr * material['LFtu']
     FS_Ptru = round(Ptru / Fy, 2)
-    show_output(FS_Ptru, output_value['Ptru'])
+    show_output(FS_Ptru, 'Ptru', output_value)
 
     # yield load
     if 0 < Aav / Abr > 1.4:
@@ -230,7 +227,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
 
     Pyt = ktry * Abr * material['LTFty']
     FS_Pyt = round(Pyt / Fy, 2)
-    show_output(FS_Pyt, output_value['Py-tranverse'])
+    show_output(FS_Pyt, 'Py-tranverse', output_value)
 
     # OBLIQUE LOAD ----------------------------------------------------------------------------------------------------------
     # ultimate load
@@ -238,16 +235,16 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     Rtru = (Fy/Ptru)**1.6
     ultimate_oblique_load = 1 / (Rau + Rtru)**0.625
     ultimate_oblique_load = round(ultimate_oblique_load, 2)
-    show_output(ultimate_oblique_load, output_value['FS1'])
+    show_output(ultimate_oblique_load, 'FS1', output_value)
 
     # yield load
     Ray = (Fx/Pya)**1.6
     Rtry = (Fy/Pyt)**1.6
     oblique_yield_load = 1 / (Ray + Rtry)**0.625
     oblique_yield_load = round(oblique_yield_load, 2)
-    show_output(oblique_yield_load, output_value['FS2'])
+    show_output(oblique_yield_load, 'FS2', output_value)
 
     # SUCINITEL BEZPECNOSTI--------------------------------------------------------------------------------------------------
     delta_bea = F / (D * t)
     gamma_bea = round(material['Fbry'] / delta_bea, 2)
-    show_output(gamma_bea, output_value['BEA'])
+    show_output(gamma_bea, 'BEA', output_value)

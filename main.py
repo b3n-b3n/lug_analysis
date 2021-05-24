@@ -23,7 +23,7 @@ dname = r'{}'.format(os.path.realpath(__file__).strip('main.py'))
 os.chdir(dname)  # working directory
 
 # canvas
-g = tkinter.Canvas(width=450, height=500, bg='grey', highlightthickness=0)
+g = tkinter.Canvas(width=450, height=500, bg=bg, highlightthickness=0)
 g.grid(row=1, column=2, rowspan=2)
 g.update()
 
@@ -119,22 +119,22 @@ output_value = {}
 ipadx = 12
 
 for i in range(len(lab_row)):
-    tkinter.Label(outputs, text=load_lab[i], fg='blue', bg=bg,
-                  font=font[0]).grid(row=lab_row[i], column=0, columnspan=2, sticky='e')
+    tkinter.Label(outputs, text=load_lab[i], fg='blue', bg=bg, justify='center',
+                  font=font[0]).grid(row=lab_row[i], column=0, columnspan=2, sticky='e'+'w', ipadx=40)
 
-# for i in range(len(lab2_row)):
-#     tkinter.Label(outputs, text=failure_lab[i], fg='black', bg=bg,
-#                   font=font[1]).grid(row=lab2_row[i], column=0, ipady=2, sticky='w'+'e', ipadx=ipadx)
+for i in range(len(lab2_row)):
+    tkinter.Label(outputs, text=failure_lab[i], fg='black', bg=bg,
+                  font=font[1]).grid(row=lab2_row[i], column=0, ipady=2, sticky='w', ipadx=ipadx)
 
-# for i in range(len(lab2_row)):
-#     output_value[output_lab[i]] = tkinter.Label(outputs, text=output_lab[i], bg=bg,  font=font[1],
-#                                                 fg='black')
-#     output_value[output_lab[i]].grid(
-#         row=lab2_row[i], column=1, ipady=2, ipadx=ipadx, sticky='e'+'w')
+for i in range(len(lab2_row)):
+    output_value[output_lab[i]] = tkinter.Label(outputs, text=output_lab[i], bg=bg,  font=font[1],
+                                                fg='black')
+    output_value[output_lab[i]].grid(
+        row=lab2_row[i], column=1, ipady=2, ipadx=ipadx, sticky='e')
 
 output_value['BEA'] = tkinter.Label(
     outputs, text='BEA', bg=bg, font=font[1], fg='black')
-output_value['BEA'].grid(row=12, column=0, columnspan=2)
+output_value['BEA'].grid(row=12, column=0, columnspan=2, ipadx=40)
 
 
 # ---SPECIFIC MATERIAL------------------------------------------------------------------
