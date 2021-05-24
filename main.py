@@ -1,4 +1,5 @@
 # libraries
+from tkinter.constants import CENTER
 import tkinter.filedialog
 import tkinter
 import os
@@ -14,30 +15,29 @@ root = tkinter.Tk()
 root.title('lug_analysis')
 bg = 'grey99'
 root['bg'] = bg
-font = [('ms sans', '10', 'bold'), ('ms sans', '10'), ('ms sans', '8')] 
+font = [('ms sans', '10', 'bold'), ('ms sans', '10'), ('ms sans', '8')]
+bd_style = 'solid'  # border style
 
 # main path / working directory
 dname = r'{}'.format(os.path.realpath(__file__).strip('main.py'))
 os.chdir(dname)  # working directory
 
 # canvas
-g = tkinter.Canvas(width=450, height=500, bg=bg,
-                   highlightthickness=0)  # 1000x600
-g.grid(row=1, column=2, rowspan=6)
+g = tkinter.Canvas(width=450, height=500, bg='grey', highlightthickness=0)
+g.grid(row=1, column=2, rowspan=2)
 g.update()
 
-# error label for the scheme
-err_lab_scheme = tkinter.Label(text='', bg=bg)
-err_lab_scheme.grid(row=0, column=2, sticky='N', pady=(70, 0))
+# entry box to type name of the case which is tested
+tkinter.Entry(width=25, justify='center', font=font[0], border=1, relief=bd_style).grid(
+    row=0, column=2, stick='E'+'W'+'N', padx=25, pady=(10, 0), ipady=4)
 
 # error label for calculations
-error_lab_calc = tkinter.Label(text='', bg=bg)
-error_lab_calc.grid(row=0, column=2, sticky='N', pady=(40, 0))
+error_lab_calc = tkinter.Label(text='', bg='grey')
+error_lab_calc.grid(row=0, column=2, sticky='N', pady=(50, 0))
 
-# entry box to type name of the case which is tested
-tkinter.Entry(width=15, justify='center', font=font[1], border=0).grid(
-    row=0, column=2, stick='E'+'W'+'N', padx=25, pady=(10, 0))
-
+# error label for the scheme
+err_lab_scheme = tkinter.Label(text='', bg='grey')
+err_lab_scheme.grid(row=0, column=2, sticky='N', pady=(80, 0))
 
 
 # ----LABELFRAMES---------------------------------------------------------
@@ -67,7 +67,7 @@ for i in range(len(entry_id)):
     tkinter.Label(inputs, text=lab_text[i], fg='blue', font=font[0], bg=bg).grid(
         row=2*i, column=0)
     d_entry[entry_id[i]] = tkinter.Entry(
-        inputs, width=15, justify='center', font=font[1])
+        inputs, width=15, justify='center', font=font[1], relief=bd_style)
     d_entry[entry_id[i]].grid(row=2*i+1, column=0, pady=3, padx=30)
     d_entry[entry_id[i]].insert(0, defaults[i])
 
@@ -120,17 +120,17 @@ ipadx = 12
 
 for i in range(len(lab_row)):
     tkinter.Label(outputs, text=load_lab[i], fg='blue', bg=bg,
-                  font=font[0]).grid(row=lab_row[i], column=0, columnspan=2, ipadx=ipadx)
+                  font=font[0]).grid(row=lab_row[i], column=0, columnspan=2, sticky='e')
 
-for i in range(len(lab2_row)):
-    tkinter.Label(outputs, text=failure_lab[i], fg='black', bg=bg,
-                  font=font[1]).grid(row=lab2_row[i], column=0, ipady=2, sticky='w'+'e', ipadx=ipadx)
+# for i in range(len(lab2_row)):
+#     tkinter.Label(outputs, text=failure_lab[i], fg='black', bg=bg,
+#                   font=font[1]).grid(row=lab2_row[i], column=0, ipady=2, sticky='w'+'e', ipadx=ipadx)
 
-for i in range(len(lab2_row)):
-    output_value[output_lab[i]] = tkinter.Label(outputs, text=output_lab[i], bg=bg,  font=font[1],
-                                                fg='black')
-    output_value[output_lab[i]].grid(
-        row=lab2_row[i], column=1, ipady=2, ipadx=ipadx, sticky='e'+'w')
+# for i in range(len(lab2_row)):
+#     output_value[output_lab[i]] = tkinter.Label(outputs, text=output_lab[i], bg=bg,  font=font[1],
+#                                                 fg='black')
+#     output_value[output_lab[i]].grid(
+#         row=lab2_row[i], column=1, ipady=2, ipadx=ipadx, sticky='e'+'w')
 
 output_value['BEA'] = tkinter.Label(
     outputs, text='BEA', bg=bg, font=font[1], fg='black')
@@ -168,28 +168,28 @@ tkinter.Radiobutton(other_material, text='Y', bg=bg, font=font[2], highlightthic
 ipady = 3
 width = 7
 specific_LFtu = tkinter.Entry(
-    other_material, justify='center', font=font[2], width=width)
-specific_LFtu.grid(row=2, column=1, ipady=ipady)
+    other_material, justify='center', font=font[2], width=width, relief=bd_style)
+specific_LFtu.grid(row=2, column=1, ipady=ipady, pady=(0, 5))
 
 specific_LFty = tkinter.Entry(
-    other_material, justify='center', font=font[2], width=width)
-specific_LFty.grid(row=2, column=2, ipady=ipady)
+    other_material, justify='center', font=font[2], width=width, relief=bd_style)
+specific_LFty.grid(row=2, column=2, ipady=ipady, pady=(0, 5))
 
 specific_TFtu = tkinter.Entry(
-    other_material, justify='center', font=font[2], width=width)
+    other_material, justify='center', font=font[2], width=width, relief=bd_style)
 specific_TFtu.grid(row=3, column=1, ipady=ipady)
 
 specific_TFty = tkinter.Entry(
-    other_material, justify='center', font=font[2], width=width)
+    other_material, justify='center', font=font[2], width=width, relief=bd_style)
 specific_TFty.grid(row=3, column=2, ipady=ipady)
 
 specific_Fbry = tkinter.Entry(
-    other_material, justify='center', font=font[2], width=width)
+    other_material, justify='center', font=font[2], width=width, relief=bd_style)
 specific_Fbry.grid(row=2, column=3, rowspan=2, ipady=4*ipady)
 
 # ---BUTTONS----------------------------------------------------------------------
-ipady = 2
-ipadx = 14
+ipady = 15
+ipadx = 25
 ipadx2 = 36
 calc_args = (d_entry, material_info, curve_axial, dname, output_value,
     curve_trans, specific_Fbry, specific_LFtu, error_lab_calc, output_lab, lab2_row,
