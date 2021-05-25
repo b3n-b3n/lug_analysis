@@ -145,48 +145,47 @@ tkinter.Label(other_material, text='Fty[MPa]', bg=bg, font=font[2]).grid(
     row=1, column=2, ipady=ipady)
 tkinter.Label(other_material, text='Fbry[MPa]', bg=bg, font=font[2]).grid(
     row=1, column=3, ipady=ipady)
-# tkinter.Label(other_material, text='L', bg=bg,
-#               font=font[2]).grid(row=2, column=0)
-# tkinter.Label(other_material, text='LT', bg=bg,
-#               font=font[2]).grid(row=3, column=0)
+tkinter.Label(other_material, text='L', bg=bg,
+              font=font[2]).grid(row=2, column=0)
+tkinter.Label(other_material, text='LT', bg=bg,
+              font=font[2]).grid(row=3, column=0)
 
 reverse = tkinter.BooleanVar()
 reverse.set(False)
 tkinter.Label(other_material, text='Grain orientation', bg=bg,
               font=font[2]).grid(row=1, column=4, columnspan=2)
 
-tkinter.Radiobutton(other_material, text='L', bg=bg, font=font[2], highlightthickness=0,
+tkinter.Radiobutton(other_material, text='X', bg=bg, font=font[2], highlightthickness=0,
                     variable=reverse, value=False).grid(row=2, column=4)
-tkinter.Radiobutton(other_material, text='LT', bg=bg, font=font[2], highlightthickness=0,
+tkinter.Radiobutton(other_material, text='Y', bg=bg, font=font[2], highlightthickness=0,
                     variable=reverse, value=True).grid(row=2, column=5)
-tkinter.Radiobutton(other_material, text='L', bg=bg, font=font[2], highlightthickness=0,
+tkinter.Radiobutton(other_material, text='X', bg=bg, font=font[2], highlightthickness=0,
                     variable=reverse, value=True).grid(row=3, column=4)
-tkinter.Radiobutton(other_material, text='LT', bg=bg, font=font[2], highlightthickness=0,
+tkinter.Radiobutton(other_material, text='Y', bg=bg, font=font[2], highlightthickness=0,
                     variable=reverse, value=False).grid(row=3, column=5)
 
 
 ipady = 3
-padx=2
-width = 9
+width = 7
 specific_LFtu = tkinter.Entry(
     other_material, justify='center', font=font[2], width=width, relief=bd_style)
-specific_LFtu.grid(row=2, column=1, ipady=ipady, pady=(0, 5), padx=padx)
+specific_LFtu.grid(row=2, column=1, ipady=ipady, pady=(0, 5))
 
 specific_LFty = tkinter.Entry(
     other_material, justify='center', font=font[2], width=width, relief=bd_style)
-specific_LFty.grid(row=2, column=2, ipady=ipady, pady=(0, 5), padx=padx)
+specific_LFty.grid(row=2, column=2, ipady=ipady, pady=(0, 5))
 
 specific_TFtu = tkinter.Entry(
     other_material, justify='center', font=font[2], width=width, relief=bd_style)
-specific_TFtu.grid(row=3, column=1, ipady=ipady, padx=padx)
+specific_TFtu.grid(row=3, column=1, ipady=ipady)
 
 specific_TFty = tkinter.Entry(
     other_material, justify='center', font=font[2], width=width, relief=bd_style)
-specific_TFty.grid(row=3, column=2, ipady=ipady, padx=padx)
+specific_TFty.grid(row=3, column=2, ipady=ipady)
 
 specific_Fbry = tkinter.Entry(
     other_material, justify='center', font=font[2], width=width, relief=bd_style)
-specific_Fbry.grid(row=2, column=3, rowspan=2, ipady=6*ipady, padx=padx)
+specific_Fbry.grid(row=2, column=3, rowspan=2, ipady=6*ipady)
 
 # ---BUTTONS----------------------------------------------------------------------
 ipady = 15
