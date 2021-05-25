@@ -32,11 +32,11 @@ report_title = tkinter.Entry(width=25, justify='center', font=font[0], border=1,
 report_title.grid(row=0, column=2, stick='E'+'W'+'N', padx=25, pady=(10, 0), ipady=4)
 
 # error label for calculations
-error_lab_calc = tkinter.Label(text='', bg='grey')
+error_lab_calc = tkinter.Label(text='', bg=bg)
 error_lab_calc.grid(row=0, column=2, sticky='N', pady=(50, 0))
 
 # error label for the scheme
-err_lab_scheme = tkinter.Label(text='', bg='grey')
+err_lab_scheme = tkinter.Label(text='', bg=bg)
 err_lab_scheme.grid(row=0, column=2, sticky='N', pady=(80, 0))
 
 
