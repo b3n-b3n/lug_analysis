@@ -1,12 +1,15 @@
 ### TODO:
 - [x] rozloženie GUI na windows zariadení
-- [ ] odskúšať to aj na iných windows zariadeniach
+- [x] odskúšať to aj na iných windows zariadeniach
 - [x] report je nejaký odseknutý
 - [x] prerobiť dokumentáciu
 - [x] automaticke nastavovanie nazvu grafu v multiple reports
-- [ ] opraviť grain direction
+- [x] opraviť grain direction
+- [ ] vymazať default entry
+- [ ] pridat grafy
+- [ ] multiple reports názvy
 
 ### OTÁZKY:
-- thickness na nákrese nie je responzívne, nechali sme to tak?
-- je entry pre specific material dostatočne široké?
-- čo je potrebné nechať v tomto foldri? treba test_data, reports...
+- thickness na nákrese nie je responzívne, nechali sme to tak?  **je to ok**
+- je entry pre specific material dostatočne široké? **je to ok**
+- čo je potrebné nechať v tomto foldri? treba test_data, reports... 
