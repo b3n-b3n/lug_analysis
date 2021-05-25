@@ -12,12 +12,15 @@ def get_material_data(material, reverse, dname):
         dname, r'data/material_info/{}/{}'.format(dir, material))).readline()
     data = data.split(", ")
 
-    for d in data:
-        d = d.split(": ")
-        d[0] = d[0].strip("'")
-        d[1] = d[1].strip("'")
-        out[d[0]] = float(d[1])
-    print(out)
+    material_name = data[0].split(": ")
+    material_name = material_name[1].strip("'")
+    out['name'] = material_name
+    
+    for i in range(1, len(data)):
+        data[i] = data[i].split(": ")
+        data[i][0] = data[i][0].strip("'")
+        data[i][1] = data[i][1].strip("'")
+        out[data[i][0]] = float(data[i][1])
     return out
 
 
@@ -36,8 +39,8 @@ def back_to_default(lab2_row, output_lab, output_value, font):
     # are returned to the default value
     for i in range(len(lab2_row)):
         output_value[output_lab[i]].config(
-            text=output_lab[i], fg='black', font='15')
-    output_value['BEA'].config(text='BEA', fg='black', font=font[0])
+            text=output_lab[i], fg='black', font=font[1])
+    output_value['BEA'].config(text='BEA', fg='black', font=font[1])
 
 
 def format_data(data):
@@ -76,6 +79,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     else:
         # load hard-coded data
         material = get_material_data(material, reverse, dname)
+    print(material)
 
 
     f_load_type = f.get()
