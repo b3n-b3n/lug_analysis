@@ -9,3 +9,4 @@
 ### OTÁZKY:
 - thickness na nákrese nie je responzívne, nechali sme to tak?
 - je entry pre specific material dostatočne široké?
+- čo je potrebné nechať v tomto foldri? treba test_data, reports...
