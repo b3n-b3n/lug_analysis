@@ -208,7 +208,7 @@ b3 = tkinter.Button(buttons, text='Show materials',
 b3.grid(row=1, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
 
 b4 = tkinter.Button(buttons, text='Redraw', command=lambda:
-                    scheme.create(None, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values), font=font[1], bg=bg)
+                    scheme.create(None, d_entry, g, font, bg, err_lab_scheme, False, []), font=font[1], bg=bg)
 b4.grid(row=3, column=1, sticky='e'+'w', ipadx=ipadx2, ipady=ipady)
 
 b5 = tkinter.Button(buttons, text='Multiple reports',
@@ -231,13 +231,13 @@ b8.grid(row=1, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
 # --------------------------------------------------------------------------------------
 
 d_entry['d_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
+    x, d_entry, g, font, bg, err_lab_scheme, False, []))
 d_entry['t_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
+    x, d_entry, g, font, bg, err_lab_scheme, False, []))
 d_entry['a_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
+    x, d_entry, g, font, bg, err_lab_scheme, False, []))
 d_entry['w_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
+    x, d_entry, g, font, bg, err_lab_scheme, False, []))
 
 scheme.create(None, d_entry, g, font, bg, err_lab_scheme, True, default_entry_values)
 g.mainloop()

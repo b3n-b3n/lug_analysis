@@ -1,5 +1,6 @@
 import pyautogui
 import tkinter
+import time
 import os
 
 import scheme
@@ -17,7 +18,6 @@ def generate_report(single_report, root, report_name, dir_path):
         file_path = tkinter.filedialog.asksaveasfilename(defaultextension='.png')
         im.save(file_path)
     else:
-        print(report_name)
         im.save(os.path.join(dir_path, r'{}.png'.format(report_name)))
 
 
@@ -42,9 +42,11 @@ def multiple_reports(dname, entry_id, d_entry, g, font, bg, err_lab_scheme, root
             d_entry[entry_id[i-1]].insert(0, line[i])
         
         report_name = line[0]
+        print("report name = ", report_name)
         report_label.delete(0, 'end')
         report_label.insert(0, report_name)
-        scheme.create(None, d_entry, g, font, bg, err_lab_scheme)
+        scheme.create(None, d_entry, g, font, bg, err_lab_scheme, False, [])
         calc.calculate(*calc_args)
+        g.update() # first refresh the screen than generate the report
+        time.sleep(0.2)
         generate_report(False, root, report_name, dir_path)
-        g.update()

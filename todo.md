@@ -7,7 +7,7 @@
 - [x] opraviť grain direction
 - [x] vymazať default entry
 - [x] pridat grafy
-- [ ] multiple reports názvy
+- [x] multiple reports názvy
 
 ### OTÁZKY:
 - thickness na nákrese nie je responzívne, nechali sme to tak?  **je to ok**
