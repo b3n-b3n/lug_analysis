@@ -12,12 +12,22 @@ def check_input(entry, name, font, err_lab_scheme, error_check):
         return (0, True)
 
 
-def create(event, d_entry, g, font, bg, err_lab_scheme):
+def create(event, d_entry, g, font, bg, err_lab_scheme, initial, defaults):
+
     error_check = False
-    W, error_check = check_input(d_entry, 'w_ent', font[1], err_lab_scheme, error_check)
-    D, error_check = check_input(d_entry, 'd_ent', font[1], err_lab_scheme, error_check)
-    a, error_check = check_input(d_entry, 'a_ent', font[1], err_lab_scheme, error_check)
-    t, error_check = check_input(d_entry, 't_ent', font[1], err_lab_scheme, error_check)
+    
+    if initial:
+        # initialize the scheme of a lug with some fake dimensions
+        # to give is some form of reasonable shape
+        D = defaults[2]
+        t = defaults[3]
+        a = defaults[4]
+        W = defaults[5]
+    else:
+        W, error_check = check_input(d_entry, 'w_ent', font[1], err_lab_scheme, error_check)
+        D, error_check = check_input(d_entry, 'd_ent', font[1], err_lab_scheme, error_check)
+        a, error_check = check_input(d_entry, 'a_ent', font[1], err_lab_scheme, error_check)
+        t, error_check = check_input(d_entry, 't_ent', font[1], err_lab_scheme, error_check)
 
 
     if not error_check:

@@ -61,7 +61,7 @@ other_material.grid(row=3, column=1, sticky='n'+'e'+'w'+'s')
 entry_id = ['fx_ent', 'fy_ent', 'd_ent', 't_ent', 'a_ent', 'w_ent']
 d_entry = {}
 lab_text = ['Fx[N]', 'Fy[N]', 'D[mm]', 't[mm]', 'a[mm]', 'W[mm]']
-defaults = [50, 70, 0.5, 0.1, 0.75, 1.5]
+default_entry_values = [50, 70, 0.5, 0.1, 0.75, 1.5]
 
 for i in range(len(entry_id)):
     tkinter.Label(inputs, text=lab_text[i], fg='blue', font=font[0], bg=bg).grid(
@@ -69,7 +69,7 @@ for i in range(len(entry_id)):
     d_entry[entry_id[i]] = tkinter.Entry(
         inputs, width=15, justify='center', font=font[1], relief=bd_style)
     d_entry[entry_id[i]].grid(row=2*i+1, column=0, pady=3, padx=30)
-    d_entry[entry_id[i]].insert(0, defaults[i])
+    # d_entry[entry_id[i]].insert(0, defaults[i])
 
 
 # ---MATERIALS------------------------------------------------------
@@ -208,7 +208,7 @@ b3 = tkinter.Button(buttons, text='Show materials',
 b3.grid(row=1, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
 
 b4 = tkinter.Button(buttons, text='Redraw', command=lambda:
-                    scheme.create(None, d_entry, g, font, bg, err_lab_scheme), font=font[1], bg=bg)
+                    scheme.create(None, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values), font=font[1], bg=bg)
 b4.grid(row=3, column=1, sticky='e'+'w', ipadx=ipadx2, ipady=ipady)
 
 b5 = tkinter.Button(buttons, text='Multiple reports',
@@ -231,13 +231,13 @@ b8.grid(row=1, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
 # --------------------------------------------------------------------------------------
 
 d_entry['d_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme))
+    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
 d_entry['t_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme))
+    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
 d_entry['a_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme))
+    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
 d_entry['w_ent'].bind('<Return>', lambda x: scheme.create(
-    x, d_entry, g, font, bg, err_lab_scheme))
+    x, d_entry, g, font, bg, err_lab_scheme, False, default_entry_values))
 
-scheme.create(None, d_entry, g, font, bg, err_lab_scheme)
+scheme.create(None, d_entry, g, font, bg, err_lab_scheme, True, default_entry_values)
 g.mainloop()
