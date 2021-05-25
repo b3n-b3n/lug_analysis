@@ -63,6 +63,8 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     F = math.sqrt(Fx**2 + Fy**2)
 
     material = material_info.get()
+    reverse = reverse.get()
+    print("reversed grain direction = ", reverse)
     if material == 'other_material':
         # material information provided by the used
         if not reverse:
