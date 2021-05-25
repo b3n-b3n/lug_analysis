@@ -5,7 +5,7 @@
 - [x] prerobiť dokumentáciu
 - [x] automaticke nastavovanie nazvu grafu v multiple reports
 - [x] opraviť grain direction
-- [ ] vymazať default entry
+- [x] vymazať default entry
 - [x] pridat grafy
 - [ ] multiple reports názvy
 
