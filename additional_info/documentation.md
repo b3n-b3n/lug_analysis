@@ -1,13 +1,6 @@
+# Lug Analysis App Doumentation
 
-| |                  / _ \            | |         (_)                        
-| |    _   _  __ _  / /_\ \_ __   __ _| |_   _ ___ _ ___    __ _ _ __  _ __  
-| |   | | | |/ _` | |  _  | '_ \ / _` | | | | / __| / __|  / _` | '_ \| '_ \ 
-| |___| |_| | (_| | | | | | | | | (_| | | |_| \__ | \__ \ | (_| | |_) | |_) |
-\_____/\__,_|\__, | \_| |_|_| |_|\__,_|_|\__, |___|_|___/  \__,_| .__/| .__/ 
-              __/ |                       __/ |                 | |   | |    
-             |___/                       |___/                  |_|   |_|    
-
-BASIC INFO:
+### General information:
 - if you have any questions/suggestions feel free to write me mail
   on e-mail adress: bencikben@gmail.com 
 - do no rename/move/delete files inside directories 'data' and 'images'
@@ -19,7 +12,7 @@ BASIC INFO:
 - firts, the console will pop-up then the graphic interface (this would 
   not be in final version it is just for testing) 
 
-CALCULATION:
+### Calculaiton:
 - after inputing all desired informations you have to choose matherial
   and relevant curve which could be displayed by buttons 'Curves 1' and 
   'Curves 2'
@@ -32,25 +25,21 @@ CALCULATION:
   inside the frame 'outputs' and console will display certain variables
   used in calculations, the names corresponds to the ones used in the book
 
-GENERATE REPORT BUTTON:
-- the function triggered by this button will save report in the form
-  of screenshot and it will ask you where you want to save it
+### Generating a report:
+- Report button:
+	- the function triggered by this button will save report in the form
+	  of screenshot and it will ask you where you want to save it
 
-MULTIPLE REPORTS BUTTON:
-- creates multiple reports based on .txt file
-- it will ask you which file you want to choose
-- structure of the data has to look like this:
+- Multiple reports button:
+	- creates multiple reports based on .txt file
+	- it will promtpt you to choose the file you want to process
+	- the example of suitable data could be found inside the directory 
+  	test_data, it was copied directly from excel 
+	- structure of the data has to look like this:
 
-  report_name	Fx[N]	Fy[N]	D[mm]	t[mm]	a[mm]	W[mm]
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-	      -	        -	    -	    -	    -	    -	    -
-
-- the example of suitable data could be found inside the directory 
-  test_data, it was copied directly from excel 
+	report_name | Fx[N] | Fy[N] | D[mm] | t[mm] | a[mm] | W[mm]
+	----------- | ----- | ----- | ----- | ----- | ----- | -----
+	_ | _ | _ | _ | _ | _ | _
+	_ | _ | _ | _ | _ | _ | _
+	_ | _ | _ | _ | _ | _ | _
+	_ | _ | _ | _ | _ | _ | _
