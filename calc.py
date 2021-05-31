@@ -212,7 +212,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
             ktru += data[i] * (Aav / Abr)**(len(data)-1-i)
     print('ktru =', ktru)
 
-    Ptru = ktru * Abr * material['LFtu']
+    Ptru = ktru * Abr * material['LTFtu']
     FS_Ptru = round(Ptru / Fy, 2)
     show_output(FS_Ptru, 'Ptru', output_value)
 
