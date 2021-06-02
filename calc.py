@@ -67,7 +67,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
 
     material = material_info.get()
     reverse = reverse.get()
-    print("reversed grain direction = ", reverse)
+    print("reversed grain direction =", reverse)
     if material == 'other_material':
         # material information provided by the used
         if not reverse:
@@ -79,8 +79,11 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     else:
         # load hard-coded data
         material = get_material_data(material, reverse, dname)
-    print(material)
 
+    # print material data
+    for mat in list(material.keys()):
+        print('{}:'.format(mat), material[mat])
+    print('')   
 
     f_load_type = f.get()
     print('f =', f_load_type)
@@ -153,6 +156,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     C = 0
     Pu = min(Pbru, Ptu)
     x = Pu / (D*t*material['LFtu'])
+    
     if x < 1:
         C = 1.1
     elif x > 3:
@@ -183,7 +187,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     Aav = 6 / ((3/A1) + (1/A2) + (1/A3) + (1/A1))
 
     print('')
-    print('A1 = ', A1)
+    print('A1 =', A1)
     print('A2 =', A2)
     print('A3 =', A3)
     print('A4 =', A4, '\n')
