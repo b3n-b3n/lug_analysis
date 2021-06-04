@@ -69,6 +69,7 @@ for i in range(len(entry_id)):
     d_entry[entry_id[i]] = tkinter.Entry(
         inputs, width=15, justify='center', font=font[1], relief=bd_style)
     d_entry[entry_id[i]].grid(row=2*i+1, column=0, pady=3, padx=30)
+    d_entry[entry_id[i]].config(highlightbackground=bg)
     # d_entry[entry_id[i]].insert(0, defaults[i])
 
 
@@ -82,7 +83,7 @@ curve_trans.set(1)
 
 f = tkinter.DoubleVar()
 f.set(1)
-f_values = [1, 0.8, 0.6, 0.4]
+f_values = [1, 0.8, 0.7, 0.6]
 
 material_value = ['2024', '7075', '15 230.6', 'other_material']
 material_txt = ['2024', '7075', '15 230.6', 'specific_material']

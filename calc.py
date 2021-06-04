@@ -50,21 +50,37 @@ def format_data(data):
         data[i] = float(data[i])
     return data
 
+def load_from_entries(d_entry, name, error_lab_calc, bg, font, cont):
+    try:
+        d_entry[name].config(highlightbackground=bg)
+        out = float(d_entry[name].get())
+        if cont: return (out, True)
+        else: return (out, False)
+    except:
+        d_entry[name].config(highlightbackground='red')
+        error_lab_calc.config(text='entries accept only float or interger vlaues', fg='red', font=font[1])
+        return (-1, False)
 
 
 def calculate(d_entry, material_info, curve_axial, dname, output_value,
     curve_trans, specific_Fbry, specific_LFtu, error_lab_calc, output_lab, lab2_row,
     specific_LFty, specific_TFtu, specific_TFty, reverse, f, font):
     
+    bg = 'grey99'
     error_lab_calc.config(text='')
-    Fx = float(d_entry['fx_ent'].get())
-    Fy = float(d_entry['fy_ent'].get())
-    D = float(d_entry['d_ent'].get())
-    t = float(d_entry['t_ent'].get())
-    a = float(d_entry['a_ent'].get())
-    W = float(d_entry['w_ent'].get())
-    F = math.sqrt(Fx**2 + Fy**2)
+    cont = True  # continue if values are correct
+    
+    Fx, cont = load_from_entries(d_entry, 'fx_ent', error_lab_calc, bg, font, cont)
+    Fy, cont = load_from_entries(d_entry, 'fy_ent', error_lab_calc, bg, font, cont)
+    D, cont = load_from_entries(d_entry, 'd_ent', error_lab_calc, bg, font, cont)
+    t, cont = load_from_entries(d_entry, 't_ent', error_lab_calc, bg, font, cont)
+    a, cont = load_from_entries(d_entry, 'a_ent', error_lab_calc, bg, font, cont)
+    W, cont = load_from_entries(d_entry, 'w_ent', error_lab_calc, bg, font, cont)
 
+    # do not continue in calculaiton if an entry is missing or invalid
+    if not cont: return
+
+    F = math.sqrt(Fx**2 + Fy**2)
     material = material_info.get()
     reverse = reverse.get()
     print("reversed grain direction =", reverse)
