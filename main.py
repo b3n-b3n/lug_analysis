@@ -69,7 +69,7 @@ for i in range(len(entry_id)):
     d_entry[entry_id[i]] = tkinter.Entry(
         inputs, width=15, justify='center', font=font[1], relief=bd_style)
     d_entry[entry_id[i]].grid(row=2*i+1, column=0, pady=3, padx=30)
-    d_entry[entry_id[i]].config(highlightbackground=bg)
+    d_entry[entry_id[i]].config(highlightbackground=bg, highlightthickness=1)
     # d_entry[entry_id[i]].insert(0, defaults[i])
 
 
