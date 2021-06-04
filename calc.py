@@ -156,7 +156,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     if W/D < 1 or W/D > 5:
         back_to_default(lab2_row, output_lab, output_value, font)
         error_lab_calc.config(
-            text='Eq. 9.8.2 ration of W/D must be in interval [1, 5]', fg='red', font=font[1])
+            text='Eq. 9.8.2 ration of W/D must be in interval (1, 5)', fg='red', font=font[1])
         return
     else:
         At = (W - D) * t
@@ -185,7 +185,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     if Pu / (D*t*material['LFtu']) < 0 or Pu / (D*t*material['LFtu']) > 3:
         back_to_default(lab2_row, output_lab, output_value, font)
         error_lab_calc.config(
-            text='Eq. 9.8.1 ration of Pu / D*t*Fx must be in interval [0, 3]', fg='red', font=font[1])
+            text='Eq. 9.8.1 ration of Pu / D*t*Fx must be in interval (0, 3)', fg='red', font=font[1])
         return
     else:
         Pya = C * (material['LFty']/material['LFtu']) * Pu
@@ -225,7 +225,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     if 0 < Aav / Abr > 1.4:
         back_to_default(lab2_row, output_lab, output_value, font)
         error_lab_calc.config(
-            text='Eq. 9.8.12, ratio of Aav / Abr must be in interval 0 - 1.4', fg='red', font=font[1])
+            text='Eq. 9.8.12, ratio of Aav / Abr must be in interval (0, 1.4)', fg='red', font=font[1])
         return
     else:
         ktru = 0
@@ -241,7 +241,7 @@ def calculate(d_entry, material_info, curve_axial, dname, output_value,
     if 0 < Aav / Abr > 1.4:
         back_to_default(lab2_row, output_lab, output_value, font)
         error_lab_calc.config(
-            text='Eq. 9.8.12, ratio of Aav / Abr must be in interval 0 - 1.4', fg='red', font=font[1])
+            text='Eq. 9.8.12, ratio of Aav / Abr must be in interval (0, 1.4)', fg='red', font=font[1])
         return
     else:
         ktry_data = format_data(
