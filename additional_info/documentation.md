@@ -8,7 +8,7 @@
 	- Console based: opens up console with GUI, which displays numeric values of variables in calculation and potential error messages; all the variable names correspond to the ones introduced in the book
 	- Window based: same as the previous one but the console is hidden
 
-### Calculaiton:
+### Calculation:
 - after inputing all desired informations you have to choose matherialand relevant curve which could be displayed by buttons 'Curves 1' and 'Curves 2'
 - it is also possible to input your own material properties properties in the frame 'specific material & grain direction' and then you have to select option specific_matherial inside the frame 'materials'
 - it is possible to reverse grain direction inside the frame 'specific material & grain direction' the default orientation is L: X; LT: Y
