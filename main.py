@@ -96,15 +96,15 @@ for i in range(8):
     tkinter.Radiobutton(materials, text="Curve 1.{}".format(i+1), bg=bg, font=font[2], highlightthickness=0,
                         variable=curve_axial, value=i+1).grid(row=i+4, column=0)
 
-for i in range(8):
+for i in range(11):
     tkinter.Radiobutton(materials, text="Curve 2.{}".format(i+1), bg=bg,  font=font[2], highlightthickness=0,
                         variable=curve_trans, value=i+1).grid(row=i+4, column=1)
 
 tkinter.Label(materials, text='load type[f]', bg=bg, font=font[2]).grid(
-    row=13, column=0, columnspan=2)
+    row=16, column=0, columnspan=2)
 for i in range(4):
     tkinter.Radiobutton(materials, text="{}".format(f_values[i]), bg=bg, font=font[2], highlightthickness=0,
-                        variable=f, value=f_values[i]).grid(row=i//2+14, column=i % 2)
+                        variable=f, value=f_values[i]).grid(row=i//2+17, column=i % 2)
 
 
 # ---OUTPUTS---------------------------------------------------------------------
