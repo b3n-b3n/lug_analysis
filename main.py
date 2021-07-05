@@ -189,44 +189,47 @@ specific_Fbry = tkinter.Entry(
 specific_Fbry.grid(row=2, column=3, rowspan=2, ipady=6*ipady)
 
 # ---BUTTONS----------------------------------------------------------------------
-ipady = 15
+ipady = 19
 ipadx = 25
 ipadx2 = 36
+padx = 5
+pady = 5
+bd_style2 = 'groove'
 calc_args = (d_entry, material_info, curve_axial, dname, output_value,
     curve_trans, specific_Fbry, specific_LFtu, error_lab_calc, output_lab, lab2_row,
     specific_LFty, specific_TFtu, specific_TFty, reverse, f, font)
 
 b1 = tkinter.Button(buttons, text='Curves 1',
-                    command=lambda: display_img.show_table(dname), font=font[1], bg=bg)
-b1.grid(row=0, column=0, sticky='w'+'e', ipadx=ipadx, ipady=ipady)
+                    command=lambda: display_img.show_table(dname), font=font[1], bg=bg, relief=bd_style2)
+b1.grid(row=0, column=0, sticky='w'+'e', ipadx=ipadx, ipady=ipady, padx=padx, pady=pady)
 
 b2 = tkinter.Button(buttons, text='Curves 2',
-                    command=lambda: display_img.show_table2(dname), font=font[1], bg=bg)
-b2.grid(row=0, column=1, sticky='w'+'e', ipadx=ipadx2, ipady=ipady)
+                    command=lambda: display_img.show_table2(dname), font=font[1], bg=bg, relief=bd_style2)
+b2.grid(row=0, column=1, sticky='w'+'e', ipadx=ipadx2, ipady=ipady, padx=padx, pady=pady)
 
 b3 = tkinter.Button(buttons, text='Show materials',
-                    command=lambda: display_img.show_materials(dname), font=font[1], bg=bg)
-b3.grid(row=1, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
+                    command=lambda: display_img.show_materials(dname), font=font[1], bg=bg, relief=bd_style2)
+b3.grid(row=1, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady, padx=padx, pady=pady)
 
 b4 = tkinter.Button(buttons, text='Redraw', command=lambda:
-                    scheme.create(None, d_entry, g, font, bg, err_lab_scheme, False, []), font=font[1], bg=bg)
-b4.grid(row=3, column=1, sticky='e'+'w', ipadx=ipadx2, ipady=ipady)
+                    scheme.create(None, d_entry, g, font, bg, err_lab_scheme, False, []), font=font[1], bg=bg, relief=bd_style2)
+b4.grid(row=3, column=1, sticky='e'+'w', ipadx=ipadx2, ipady=ipady, padx=padx, pady=pady)
 
-b5 = tkinter.Button(buttons, text='Multiple reports',
+b5 = tkinter.Button(buttons, text='Multiple reports', relief=bd_style2,
                     command=lambda: report.multiple_reports(dname, entry_id, d_entry, g, font, bg, err_lab_scheme, root, calc_args, report_title), font=font[1], bg=bg)
-b5.grid(row=2, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
+b5.grid(row=2, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady, padx=padx, pady=pady)
 
 b6 = tkinter.Button(buttons, text='Generate report',
-                    command=lambda: report.generate_report(True, root, None, None), font=font[1], bg=bg)
-b6.grid(row=2, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
+                    command=lambda: report.generate_report(True, root, None, None), font=font[1], bg=bg, relief=bd_style2)
+b6.grid(row=2, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady, padx=padx, pady=pady)
 
-b7 = tkinter.Button(buttons, text='Calculate',
+b7 = tkinter.Button(buttons, text='Calculate', relief=bd_style2,
     command=lambda: calc.calculate(*calc_args), font=font[1], bg=bg)
-b7.grid(row=3, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
+b7.grid(row=3, column=0, sticky='e'+'w', ipadx=ipadx, ipady=ipady, padx=padx, pady=pady)
 
-b8 = tkinter.Button(buttons, text='Load Types',
+b8 = tkinter.Button(buttons, text='Load Types', relief=bd_style2,
                     command=lambda: display_img.show_load_types(dname), font=font[1], bg=bg)
-b8.grid(row=1, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady)
+b8.grid(row=1, column=1, sticky='e'+'w', ipadx=ipadx, ipady=ipady, padx=padx, pady=pady)
 
 
 # --------------------------------------------------------------------------------------
