@@ -4,9 +4,8 @@
 - if you have any questions/suggestions feel free to mail me at: bencikben@gmail.com 
 - all of the calculations are based on the method described in book Airframe Structural Design by Michael Chung-Yung Niu, you can finda copy of it in directory 'additional_info'
 - the binary file (.exe) is independant and can function without other files bundeled to this repository
-- the directory exe_file contains two versions:
-	- Console based: opens up console with GUI, which displays numeric values of variables in calculation and potential error messages; all the variable names correspond to the ones introduced in the book
-	- Window based: same as the previous one but the console is hidden
+- the directory exe_file contains executable binary file for windows:
+	- in addition it opens up a console to make it easier for debugging potential errors
 
 ### Calculation:
 - after inputing all desired informations you have to choose matherialand relevant curve which could be displayed by buttons 'Curves 1' and 'Curves 2'
