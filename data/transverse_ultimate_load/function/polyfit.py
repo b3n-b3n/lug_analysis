@@ -3,7 +3,7 @@ import matplotlib.image as image
 import matplotlib.pyplot as plt
 
 func = []
-dataset = [str(i) for i in range(9, 12)]
+dataset = [str(i) for i in range(1, 12)]
 im = plt.imread('crop_bigger.png')
 fig, ax = plt.subplots()
 ax.imshow(im, aspect='auto', extent=(0, 1.4, 0, 1.7))
@@ -27,12 +27,9 @@ for i in range(len(dataset)):
     Y = []
     for j in range(len(X)):
         y = 0 
-        degree = 4
+        degree = len(data)-1
         for k in range(len(data)):
-            try:
                 y += data[k] * X[j]**(degree-k)
-            except:
-                pass
         Y.append(y)
     plt.plot(X, Y)
 
@@ -46,7 +43,7 @@ for i in range(len(dataset)):
         Y2 = []
         for j in range(len(X2)):
             y = 0 
-            degree = 6
+            degree = len(data)-1
             for k in range(len(data)):
                 y += data[k] * X2[j]**(degree-k)
             Y2.append(y)
