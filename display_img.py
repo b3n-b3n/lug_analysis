@@ -4,7 +4,7 @@ import os
 def show_table(dname):
     new_window = tkinter.Tk()
     new_window.title('curves1')
-    img = tkinter.PhotoImage(master=new_window, file=os.path.join(dname, r'images/curve_materials1.png'))
+    img = tkinter.PhotoImage(master=new_window, file=os.path.join(dname, r'images/curve_materials1_landscape.png'))
     w = tkinter.Label(new_window, image=img)
     w.pack()
     new_window.mainloop()
@@ -22,7 +22,7 @@ def show_table2(dname):
 def show_materials(dname):
     new_window3 = tkinter.Tk()
     new_window3.title('materials')
-    img = tkinter.PhotoImage(master=new_window3, file=os.path.join(dname, r'images/material_data.png'))
+    img = tkinter.PhotoImage(master=new_window3, file=os.path.join(dname, r'images/material_data_bigger.png'))
     w = tkinter.Label(new_window3, image=img)
     w.pack()
     new_window3.mainloop()
